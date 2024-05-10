@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+<!-- {% load static %} -->
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block carousel %}
+    {% include 'carousel.html' %}
+{% endblock carousel %}
+
+{% block content %}
+    <div class="container mt-4 mb-5">
+        <h2 class="pt-2 pb-3 text-center gave">Featured Products</h2>
+        <div class="row justify-content-center gy-2">
+            {% if category %}
+                {% for items in category %}
+                    <div class="col-10 col-sm-10 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img
+                                src="{{ items.img.url }}"
+                                class="card-img-top"
+                                alt="..."
+                            />
+                            <div class="card-body">
+                                <h5 class="card-title">{{ items.name }}</h5>
+                                <p class="card-text">
+                                        {{ items.description }}
+                                </p>
+                                <a href="{% url 'product_category' items.slug %}" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        <!--  -->
+            </div>
+        </div>
+
+    <div class="about text-center p-3" id="about">
+        <div class="container">
+        <h2 class="pt-2 pb-3 text-center gave">About Us</h2>
+        <div class="row justify-content-center">
+            <div class="col-12">
+            <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                fugit minus a veritatis perferendis laborum doloribus dolorum
+                possimus aliquid iure quam, aspernatur tenetur animi ipsum
+                pariatur eius asperiores aperiam velit.
+
+                <p class="pt-2">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam repellat, dolore quae magni non minus optio ducimus
+                reprehenderit unde dicta rerum, debitis officiis adipisci beatae
+                quibusdam ex at, amet doloribus!
+                </p>
+            </span>
+
+            <div class="mt-4">
+                <a href="" class="btn btn-outline-light w-25 p-3">About us</a>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block contact %}
+    {% include 'contact.html' %}
+{% endblock contact %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+    
+    
+    
+    

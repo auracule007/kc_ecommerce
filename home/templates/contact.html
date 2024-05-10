@@ -1,0 +1,76 @@
+<div class="container mt-3 mb-4" id="contact">
+    <h2 class="pt-2 pb-3 text-center gave">Contact Us</h2>
+    <div class="row justify-content-center gy-2">
+      <div class="col-10 col-sm-10 col-md-6 col-lg-6 col-xl-6">
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126846.01254231359!2d3.281126809493276!3d6.529528755506521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9228fa2a3999%3A0xd7a8324bddbba1f0!2sIkeja%2C%20Lagos!5e0!3m2!1sen!2sng!4v1710755494725!5m2!1sen!2sng"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+      <div class="col-10 col-sm-10 col-md-6 col-lg-6 col-6">
+        <div class="cform">
+          <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label"
+                >Full name</label
+              >
+              <input
+                type="text"
+                name="full_name"
+                class="form-control"
+                id="exampleInputText1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label"
+                >Subject</label
+              >
+              <input
+                type="text"
+                name="subject"
+                class="form-control"
+                id="exampleInputText1"
+                aria-describedby="emailHelp"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputText1" class="form-label"
+                >Message</label
+              >
+              <textarea
+                name="message"
+                id=""
+                class="form-control"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn contact-btn">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

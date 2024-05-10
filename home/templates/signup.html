@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block carousel %}
+    {% include 'carousel.html' %}
+{% endblock carousel %}
+
+{% block content %}
+    <!-- content -->
+    <div class="container mt-5 mb-5">
+      <h2 class="pt-2 pb-3 text-center gave">Register</h2>
+      <div class="row justify-content-center gy-3">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="details">
+            <img src="{% static '' %}img/cloth3.jpg" class="img-fluid" alt="" />
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="cform">
+            <form action="{% url 'signup' %}" method="POST">
+            {% csrf_token %}
+              <div class="mb-3">
+                <label for="">UserName</label>
+                <input type="text" name="username" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">First name</label>
+                <input type="text" name="first_name" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">Last name</label>
+                <input type="text" name="last_name" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">Email Address</label>
+                <input type="email" name="email" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">Phone Number</label>
+                <input type="text" name="phone" class="form-control" />
+                <input type="hidden" value="Profile/avatar.jpg" name="profile_img" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">Password</label>
+                <input type="password" name="password1" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">Confirm Password</label>
+                <input type="password" name="password2" class="form-control" />
+              </div>
+
+              <div class="d-flex">
+                <button type="submit" class="btn contact-btn">Register</button>
+                <a href="{% url 'signin' %}" class="btn register-btn ms-3">Login</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- content done -->
+{% endblock content %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+    
+    
+    
+    

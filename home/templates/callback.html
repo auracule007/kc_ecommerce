@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block carousel %}
+    {% include 'carousel.html' %}
+{% endblock carousel %}
+
+{% block content %}
+  <div class="container mt-4 mb-4">
+    <h2 class="pt-2 pb-3 text-center gave">Callback</h2>
+      <div class="row justify-content-center gy-3">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <h5>Dear {{profile.first_name}}, </h5>
+
+            <h6>Thank you for patronizing us, we look forward to doing more business with you..</h6>
+        </div>
+      </div>
+    </div>
+  <!-- content done -->
+{% endblock content %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+    
+    
+    
+    

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block carousel %}
+    {% include 'carousel.html' %}
+{% endblock carousel %}
+
+{% block content %}
+    <!-- content -->
+    <div class="container mt-5 mb-5">
+      <h2 class="pt-2 pb-3 text-center gave">Login</h2>
+      <div class="row justify-content-center gy-3">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="details">
+            <img src="{% static '' %}img/cloth3.jpg" class="img-fluid" alt="" />
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+          <div class="cform">
+            <form action="{% url 'signin' %}" method="POST">
+            {% csrf_token %}
+              <div class="mb-3">
+                <label for="">UserName</label>
+                <input type="text" name="username" class="form-control" />
+              </div>
+              <div class="mb-3">
+                <label for="">Password</label>
+                <input type="password" name="password" class="form-control" />
+              </div>
+
+              <div class="d-flex">
+                <button type="submit" class="btn contact-btn">Login</button>
+                <a href="{% url 'signup' %}" class="btn register-btn ms-3">Register</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- content done -->
+{% endblock content %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+    
+    
+    
+    

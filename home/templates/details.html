@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+<!-- {% load static %} -->
+
+{% block header %}
+    {% include 'header.html' %}
+{% endblock header %}
+
+{% block carousel %}
+    {% include 'carousel.html' %}
+{% endblock carousel %}
+
+{% block content %}
+    <!-- content -->
+    <div class="container mt-4 mb-4">
+        <h2 class="pt-2 pb-3 text-center gave">Product Details</h2>
+          <div class="row justify-content-center gy-3">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <div class="details">
+                <img src="{{details.img.url}}" class="img-fluid" alt="" />
+              </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+              <div class="prod_ddetails">
+                <h2 class="text-center">{{details.title}}</h2>
+                description:
+                <p>
+                 {{details.description}}
+                </p>
+    
+                <h6>Price: #{{details.price}}</h6>
+    
+                <div class="d-block maze">
+                  <form action="{% url 'shopcart' %}" method="POST">
+                  {% csrf_token %}
+                    <div>
+                      <input type="hidden" name="product_id" value="{{details.id}}" />
+                      <input
+                        type="number"
+                        name="quantity"
+                        value="1"
+                        min="{{details.min_quantity}}"
+                        max="{{details.max_quantity}}"
+                        id=""
+                      />
+                      <button type="submit" class="btn">cart</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- content done -->
+{% endblock content %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock footer %}
+    
+    
+    
+    

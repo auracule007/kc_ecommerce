@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: kc_ecommerce
+    buildCommand: "./build.sh"
+    env: python
+    startCommand:  "gunicorn kc_ecommerce.wsgi:application"
